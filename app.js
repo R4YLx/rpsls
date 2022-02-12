@@ -61,6 +61,7 @@ const scoreOutput = newScore => {
 
 const resultOutput = result => {
 	const scoreboard = document.createElement('h2');
+
 	scoreboard.innerHTML = result;
 	resultEl.appendChild(scoreboard);
 };
@@ -75,22 +76,30 @@ const getWeapons = () => {
 	});
 };
 
-getWeapons();
+// Start playing the game
+const playGame = () => {
+	getWeapons();
+	let userChoice;
+	let compChoice;
 
-const weaponEl = document.querySelector('.weapons');
+	const weaponsEl = document.querySelectorAll('.weapons');
+	weaponsEl.forEach(weaponBtn => {
+		weaponBtn.addEventListener('click', e => {
+			// User choice
+			userChoice = e.target.innerHTML;
+			console.log(`You chose ${userChoice}`);
 
-let userChoice;
-let compChoice;
+			// Computer choice
+			compChoice = options[Math.floor(Math.random() * options.length)];
+			console.log(`The computer chose ${compChoice}`);
 
-// Click event
-weaponEl.addEventListener('click', e => {
-	// userChoice = e.target.innerHTML;
-	// compChoice = options[Math.floor(Math.random() * options.length)];
+			compareChoices(userChoice, compChoice);
+		});
+	});
+
 	// compareChoices(userChoice, compChoice);
-	// console.log(userChoice, compChoice);
+};
 
-	console.log(e.target.tagName);
-	console.log(e.target.innerHTML);
-});
+playGame();
 
 // New round, go again
