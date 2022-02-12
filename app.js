@@ -23,7 +23,9 @@ const compareChoices = (userChoice, compChoice) => {
 		case '🖖🪨':
 		case '✂️🦎':
 		case '🦎🖖':
-			resultOutput(`You win! You chose ${userChoice} against ${compChoice}.`);
+			resultOutput(
+				`<span class="win">You win!</span> You chose ${userChoice} against ${compChoice}.`
+			);
 			break;
 
 		case '📰✂️':
@@ -37,7 +39,7 @@ const compareChoices = (userChoice, compChoice) => {
 		case '🦎✂️':
 		case '🖖🦎':
 			resultOutput(
-				`You thought you could win with ${userChoice} against ${compChoice}? Try again.`
+				`<span class="lose">You lost!</span> You thought you could win with ${userChoice} against ${compChoice}? Try again.`
 			);
 			break;
 
@@ -46,7 +48,9 @@ const compareChoices = (userChoice, compChoice) => {
 		case '✂️✂️':
 		case '🦎🦎':
 		case '🖖🖖':
-			resultOutput(`${userChoice} vs. ${compChoice} Draw!`);
+			resultOutput(
+				`${userChoice} vs. ${compChoice} <br><br><span class="draw">Draw!</span>`
+			);
 			break;
 	}
 };

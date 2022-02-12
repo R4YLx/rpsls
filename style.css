@@ -4,6 +4,7 @@ body {
 
 h1 {
 	color: #facb33;
+	font-family: 'Anton', sans-serif;
 }
 
 #options {
@@ -30,14 +31,34 @@ button {
 
 h2 {
 	display: block;
+	color: #ffff;
+	font-family: 'Oswald', sans-serif;
 }
 
 #playAgain p,
 .rulesBtn p {
+	font-family: 'Oswald', sans-serif;
 	display: inline;
 	padding: 0.5rem;
 	background-color: white;
 	border-radius: 0.5rem;
+}
+
+.rulesBtn {
+	display: flex;
+	justify-content: center;
+}
+
+.win {
+	color: #28b431;
+}
+
+.draw {
+	color: #e7b416;
+}
+
+.lose {
+	color: #000000;
 }
 
 /* .lightbox {
