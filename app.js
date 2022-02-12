@@ -1,70 +1,96 @@
 // Variables
-const resultDisplay = document.querySelector('#result');
-const choiceDisplay = document.querySelector('#options');
+const resultEl = document.querySelector('#result');
+const optionsEl = document.querySelector('#options');
+const scoreboardEl = document.querySelector('#score');
+const playAgainEl = document.querySelector('#playAgain');
 
-const options = {
-	rock: '🪨',
-	paper: '📰',
-	scissors: '✂️',
-	lizard: '🦎',
-	spock: '🖖',
-};
+const options = ['🪨', '📰', '✂️', '🦎', '🖖'];
 
 let score = 0;
 
-const battle = e => {
-	const userChoice = e.target.innerHTML;
-	const compChoice = options[Math.floor(Math.random() * options.length)];
-	compaceChoices(userChoice, compChoice);
-};
-
-console.log(compChoice);
-
-// Function for showing and posting result
-// const scoreOutput;
-
-options.forEach(choice => {
-	const weaponOfChoice = document.createElement('div');
-	weaponOfChoice.innerHTML = choice;
-	weaponOfChoice.addEventListener('click');
-	choiceDisplay.appendChild(weaponOfChoice);
-});
-
-// Function for declaring result. Win, lose or draw
-const compaceChoices = (userChoice, compChoice) => {
+// Game rules. Win, lose or draw
+const compareChoices = (userChoice, compChoice) => {
 	switch (userChoice + compChoice) {
-		case 'scissorspapper':
-		case 'rockscissors':
-		case 'paperrock':
-		case 'lizardpaper':
-		case 'spockscissors':
-		case 'rocklizard':
-		case 'paperspock':
-		case 'spockrock':
-		case 'scissorslizard':
-		case 'lizardspock':
-			scoreOutput('You won!');
+		case '✂️📰':
+		case '🪨✂️':
+		case '📰🪨':
+		case '🦎📰':
+		case '🖖✂️':
+		case '🪨🦎':
+		case '📰🖖':
+		case '🖖🪨':
+		case '✂️🦎':
+		case '🦎🖖':
+			resultOutput('You won!');
 			break;
 
-		case 'papperscissors':
-		case 'scissorsrock':
-		case 'rockpaper':
-		case 'paperlizard':
-		case 'scissorsspock':
-		case 'lizardrock':
-		case 'spockpaper':
-		case 'rockspock':
-		case 'lizardscissors':
-		case 'spocklizard':
-			scoreOutput('You lose!');
+		case '📰✂️':
+		case '✂️🪨':
+		case '🪨📰':
+		case '📰🦎':
+		case '✂️🖖':
+		case '🦎🪨':
+		case '🖖📰':
+		case '🪨🖖':
+		case '🦎✂️':
+		case '🖖🦎':
+			resultOutput('You lose!');
 			break;
 
-		case 'scissorsscissors':
-		case 'rockrock':
-		case 'paperpaper':
-		case 'lizardlizard':
-		case 'spockspock':
-			scoreOutput("It's a draw!");
+		case '🪨🪨':
+		case '📰📰':
+		case '✂️✂️':
+		case '🦎🦎':
+		case '🖖🖖':
+			resultOutput("It's a draw!");
 			break;
 	}
 };
+
+// const weaponOfChoice = e => {
+// 	const userChoice = e.target.innerHTML;
+// 	const compChoice = options[Math.floor(Math.random() * options.length)];
+// 	compareChoices(userChoice, compChoice);
+// };
+
+// Function for showing score
+const scoreOutput = newScore => {
+	score = newScore;
+	scoreboardEl.innerHTML = newScore;
+};
+
+const resultOutput = result => {
+	const scoreboard = document.createElement('h2');
+	scoreboard.innerHTML = result;
+	resultEl.appendChild(scoreboard);
+};
+
+// Creates buttons for weapons
+const getWeapons = () => {
+	options.forEach(choice => {
+		let weapon = document.createElement('button');
+		weapon.className = 'btn weapons';
+		weapon.innerHTML = choice;
+		optionsEl.appendChild(weapon);
+	});
+};
+
+getWeapons();
+
+const weaponEl = document.querySelector('.weapons');
+
+let userChoice;
+let compChoice;
+
+// Click event
+weaponEl.addEventListener('click', e => {
+	// userChoice = e.target.innerHTML;
+	// compChoice = options[Math.floor(Math.random() * options.length)];
+	// compareChoices(userChoice, compChoice);
+	// console.log(userChoice, compChoice);
+
+	console.log(e.target.tagName);
+	console.log(e.target.innerHTML);
+});
+
+// New round, go again

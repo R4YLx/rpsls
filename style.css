@@ -1,0 +1,24 @@
+body {
+	background-color: #ab0020;
+}
+
+h1 {
+	color: #facb33;
+}
+
+#options {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+button {
+	margin: 1rem;
+	padding: 1rem;
+	border-radius: 100%;
+}
+
+.weapons {
+	font-size: 2rem;
+	text-shadow: 1px 1px 4px black;
+}
