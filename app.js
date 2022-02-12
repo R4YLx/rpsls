@@ -3,6 +3,8 @@ const resultEl = document.querySelector('#result');
 const optionsEl = document.querySelector('#options');
 const scoreboardEl = document.querySelector('#score');
 const playAgainEl = document.querySelector('#playAgain');
+const rulesBtnEl = document.querySelector('.rulesBtn');
+const lightboxEl = document.querySelector('.lightbox');
 
 const options = ['🪨', '📰', '✂️', '🦎', '🖖'];
 
@@ -21,7 +23,7 @@ const compareChoices = (userChoice, compChoice) => {
 		case '🖖🪨':
 		case '✂️🦎':
 		case '🦎🖖':
-			resultOutput('You won!');
+			resultOutput(`You win! You chose ${userChoice} against ${compChoice}.`);
 			break;
 
 		case '📰✂️':
@@ -34,7 +36,9 @@ const compareChoices = (userChoice, compChoice) => {
 		case '🪨🖖':
 		case '🦎✂️':
 		case '🖖🦎':
-			resultOutput('You lose!');
+			resultOutput(
+				`You thought you could win with ${userChoice} against ${compChoice}? Try again.`
+			);
 			break;
 
 		case '🪨🪨':
@@ -42,26 +46,19 @@ const compareChoices = (userChoice, compChoice) => {
 		case '✂️✂️':
 		case '🦎🦎':
 		case '🖖🖖':
-			resultOutput("It's a draw!");
+			resultOutput(`${userChoice} vs. ${compChoice} Draw!`);
 			break;
 	}
 };
 
-// const weaponOfChoice = e => {
-// 	const userChoice = e.target.innerHTML;
-// 	const compChoice = options[Math.floor(Math.random() * options.length)];
-// 	compareChoices(userChoice, compChoice);
-// };
-
 // Function for showing score
-const scoreOutput = newScore => {
-	score = newScore;
-	scoreboardEl.innerHTML = newScore;
-};
+// const scoreOutput = newScore => {
+// 	score = newScore;
+// 	scoreboardEl.innerHTML = newScore;
+// };
 
 const resultOutput = result => {
 	const scoreboard = document.createElement('h2');
-
 	scoreboard.innerHTML = result;
 	resultEl.appendChild(scoreboard);
 };
@@ -78,6 +75,7 @@ const getWeapons = () => {
 
 // Start playing the game
 const playGame = () => {
+	optionsEl.innerHTML = '';
 	getWeapons();
 	let userChoice;
 	let compChoice;
@@ -87,19 +85,44 @@ const playGame = () => {
 		weaponBtn.addEventListener('click', e => {
 			// User choice
 			userChoice = e.target.innerHTML;
-			console.log(`You chose ${userChoice}`);
 
 			// Computer choice
 			compChoice = options[Math.floor(Math.random() * options.length)];
-			console.log(`The computer chose ${compChoice}`);
 
 			compareChoices(userChoice, compChoice);
+
+			playAgainEl.innerHTML = `<p>Play again</p>`;
+			playAgain();
 		});
 	});
-
-	// compareChoices(userChoice, compChoice);
 };
 
 playGame();
 
 // New round, go again
+const playAgain = () => {
+	playAgainEl.addEventListener('click', e => {
+		console.log(e.target.tagName);
+		resultEl.innerHTML = '';
+		playAgainEl.innerHTML = '';
+	});
+};
+
+// Rules
+
+// rulesBtnEl.addEventListener('click', () => {
+// 	showLightbox();
+// });
+
+// const showLightbox = () => {
+// 	if (lightboxEl.style.display === 'block') {
+// 		lightboxEl.style.display = 'none';
+// 		lightboxEl.classList.remove('showLightbox');
+// 	} else {
+// 		lightboxEl.style.display = 'block';
+// 		lightboxEl.classList.add('showLightbox');
+// 		let rules = document.createElement('div');
+// 		rules.className = 'rules';
+// 		lightboxEl.appendChild();
+// 	}
+// };

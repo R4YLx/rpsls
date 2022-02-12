@@ -22,3 +22,32 @@ button {
 	font-size: 2rem;
 	text-shadow: 1px 1px 4px black;
 }
+
+.topSection {
+	text-align: center;
+	min-height: 30vh;
+}
+
+h2 {
+	display: block;
+}
+
+#playAgain p,
+.rulesBtn p {
+	display: inline;
+	padding: 0.5rem;
+	background-color: white;
+	border-radius: 0.5rem;
+}
+
+/* .lightbox {
+	position: fixed;
+	top: 80;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #444444a2;
+	align-items: center;
+	z-index: 100;
+	display: none;
+} */
