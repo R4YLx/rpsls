@@ -1,8 +1,10 @@
 // Variables
+const topSectionEl = document.querySelector('.topSection');
 const resultEl = document.querySelector('#result');
 const optionsEl = document.querySelector('#options');
 const scoreboardEl = document.querySelector('#score');
 const playAgainEl = document.querySelector('#playAgain');
+const resetBtnEl = document.querySelector('#reset');
 const rulesBtnEl = document.querySelector('.rulesBtn');
 const rulesEl = document.querySelector('.rules');
 const userScoreEl = document.querySelector('.userScore');
@@ -123,7 +125,14 @@ const playGame = () => {
 			compareChoices(userChoice, compChoice);
 
 			playAgainEl.innerHTML = `<p>Play again</p>`;
+			resetBtnEl.innerHTML = `<p>Reset</p>`;
+			// const resetBtnEl = document.createElement('p');
+			// resetBtnEl.className = 'replay';
+			// resetBtnEl.innerHTML = `<p>Reset game</p>`;
+			// topSectionEl.appendChild();
+
 			playAgain();
+			resetGame();
 		});
 	});
 };
@@ -135,5 +144,18 @@ const playAgain = () => {
 	playAgainEl.addEventListener('click', () => {
 		resultEl.innerHTML = '';
 		playAgainEl.innerHTML = '';
+		resetBtnEl.innerHTML = '';
+	});
+};
+
+// reset button
+const resetGame = () => {
+	resetBtnEl.addEventListener('click', () => {
+		resultEl.innerHTML = '';
+		playAgainEl.innerHTML = '';
+		resetBtnEl.innerHTML = '';
+		userScore = 0;
+		compScore = 0;
+		updateScore();
 	});
 };

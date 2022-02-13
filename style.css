@@ -52,12 +52,19 @@ h2 {
 	color: #ffff;
 	font-family: 'Oswald', sans-serif;
 }
-
+/* 
 #playAgain {
 	width: 100%;
+} */
+
+.btns {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
 }
 
-#playAgain p,
+.replay p,
 .rulesBtn p {
 	font-family: 'Oswald', sans-serif;
 	display: inline;
