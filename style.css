@@ -48,14 +48,6 @@ h2 {
 	color: #000000;
 }
 
-.bottomSection {
-	/* display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	gap: 2rem; */
-}
-
 #options {
 	display: flex;
 	flex-wrap: wrap;
