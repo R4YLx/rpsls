@@ -1,8 +1,8 @@
 // Variables
 const resultEl = document.querySelector('#result');
 const optionsEl = document.querySelector('#options');
-const playAgainEl = document.querySelector('#playAgain');
-const resetBtnEl = document.querySelector('#reset');
+
+const resetBtnEl = document.querySelector('.reset');
 const rulesBtnEl = document.querySelector('.rulesBtn');
 const rulesEl = document.querySelector('.rules');
 const userScoreEl = document.querySelector('.userScore');
@@ -115,6 +115,11 @@ const playGame = () => {
 	const weaponsEl = document.querySelectorAll('.weapons');
 	weaponsEl.forEach(weaponBtn => {
 		weaponBtn.addEventListener('click', e => {
+			// if this ID already exists. Remove it.
+			if (document.getElementById('resultText')) {
+				document.getElementById('resultText').remove();
+			}
+
 			// User choice
 			userChoice = e.target.innerHTML;
 
@@ -122,39 +127,20 @@ const playGame = () => {
 			compChoice = options[Math.floor(Math.random() * options.length)];
 
 			compareChoices(userChoice, compChoice);
-
-			playAgainEl.innerHTML = `<p>Play again</p>`;
-			resetBtnEl.innerHTML = `<p>Reset</p>`;
-
-			// if (document.getElementById('resultText')) {
-			// 	document.getElementById('resultText').remove();
-			// }
-
-			playAgain();
-			resetGame();
 		});
 	});
 };
 
 playGame();
 
-// New round, go again
-const playAgain = () => {
-	playAgainEl.addEventListener('click', () => {
-		resultEl.innerHTML = '';
-		playAgainEl.innerHTML = '';
-		resetBtnEl.innerHTML = '';
-	});
-};
-
 // reset button
 const resetGame = () => {
 	resetBtnEl.addEventListener('click', () => {
 		resultEl.innerHTML = '';
-		playAgainEl.innerHTML = '';
-		resetBtnEl.innerHTML = '';
 		userScore = 0;
 		compScore = 0;
 		updateScore();
 	});
 };
+
+resetGame();

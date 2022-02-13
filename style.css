@@ -22,7 +22,7 @@ h1 {
 
 .topSection {
 	text-align: center;
-	min-height: 30vh;
+	min-height: 25vh;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
@@ -48,11 +48,20 @@ h2 {
 	color: #000000;
 }
 
+.bottomSection {
+	/* display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem; */
+}
+
 #options {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	padding: 1rem;
+	width: 100%;
 }
 
 button {
@@ -67,26 +76,20 @@ button {
 	text-shadow: 1px 1px 3px black;
 }
 
-.btns {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	gap: 1rem;
-}
-
-.replay p,
-.rulesBtn p {
+.rulesBtn p,
+.reset p {
 	font-family: 'Oswald', sans-serif;
-	display: inline;
+	display: inline-block;
 	padding: 0.5rem;
 	background-color: white;
 	border-radius: 0.5rem;
 	font-size: clamp(0.5rem, 3vw, 2rem);
 }
 
-.rulesBtn {
-	display: flex;
-	justify-content: center;
+.rulesBtn,
+.reset {
+	text-align: center;
+	/* max-width: 20%; */
 }
 
 .hide {
