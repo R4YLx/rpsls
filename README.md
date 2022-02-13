@@ -31,8 +31,8 @@ The classic game of rock, paper, scissors with a twist.
 
 #### Tablet
 
-<img src="https://github.com/R4YLx/rpsls/blob/main/assets/screenshots/mobile%20scrn.png" width="50%">
+<img src="https://github.com/R4YLx/rpsls/blob/main/assets/screenshots/tablet-scrn.png" width="50%">
 
 #### Desktop
 
-<img src="https://github.com/R4YLx/rpsls/blob/main/assets/screenshots/mobile%20scrn.png" width="50%">
+<img src="https://github.com/R4YLx/rpsls/blob/main/assets/screenshots/desktop-scrn.png" width="50%">
