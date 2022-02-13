@@ -14,8 +14,7 @@ The classic game of rock, paper, scissors with a twist.
 > Lizard eats Paper,<br>
 > Paper disproves Spock,<br>
 > Spock vaporizes Rock,<br>
-> (and as it always has) Rock crushes Scissors"<br>
-> <br>_- Sheldon Cooper_
+> (and as it always has) Rock crushes Scissors"<br> > <br>_- Sheldon Cooper_
 
 ## Languages and tools
 
@@ -26,4 +25,4 @@ The classic game of rock, paper, scissors with a twist.
 
 ## Screenshot
 
-<img src="https://github.com/R4YLx/Cat-of-the-day/blob/main/cotd-screenshot.png" width="50%">
+<img src="https://github.com/R4YLx/rpsls/blob/main/assets/screenshots/mobile%20scrn.png" width="50%">
