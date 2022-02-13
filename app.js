@@ -88,6 +88,7 @@ const showRules = () => {
 	rulesEl.classList.toggle('hide');
 };
 
+// Outputs the result after each match
 const resultOutput = result => {
 	const scoreboard = document.createElement('h2');
 	scoreboard.id = 'resultText';
