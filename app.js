@@ -4,7 +4,7 @@ const optionsEl = document.querySelector('#options');
 const scoreboardEl = document.querySelector('#score');
 const playAgainEl = document.querySelector('#playAgain');
 const rulesBtnEl = document.querySelector('.rulesBtn');
-const lightboxEl = document.querySelector('.lightbox');
+const rulesEl = document.querySelector('.rules');
 
 const options = ['🪨', '📰', '✂️', '🦎', '🖖'];
 
@@ -55,11 +55,26 @@ const compareChoices = (userChoice, compChoice) => {
 	}
 };
 
-// Function for showing score
-// const scoreOutput = newScore => {
-// 	score = newScore;
-// 	scoreboardEl.innerHTML = newScore;
-// };
+// Rules button
+rulesBtnEl.addEventListener('click', () => {
+	rulesEl.innerHTML = `<h3>Rules</h3>
+	<p>Scissors cuts Paper,<br>
+	Paper covers Rock,<br>
+	Rock crushes Lizard,<br>
+	Lizard poisons Spock,<br>
+	Spock smashes Scissors,<br>
+	Scissors decapitates Lizard,<br>
+	Lizard eats Paper,<br>
+	Paper disproves Spock,<br>
+	Spock vaporizes Rock,<br>
+	(and as it always has) Rock crushes Scissors</p>`;
+	showRules();
+});
+
+// Rules toggler
+const showRules = () => {
+	rulesEl.classList.toggle('hide');
+};
 
 const resultOutput = result => {
 	const scoreboard = document.createElement('h2');
@@ -105,28 +120,8 @@ playGame();
 
 // New round, go again
 const playAgain = () => {
-	playAgainEl.addEventListener('click', e => {
-		console.log(e.target.tagName);
+	playAgainEl.addEventListener('click', () => {
 		resultEl.innerHTML = '';
 		playAgainEl.innerHTML = '';
 	});
 };
-
-// Rules
-
-// rulesBtnEl.addEventListener('click', () => {
-// 	showLightbox();
-// });
-
-// const showLightbox = () => {
-// 	if (lightboxEl.style.display === 'block') {
-// 		lightboxEl.style.display = 'none';
-// 		lightboxEl.classList.remove('showLightbox');
-// 	} else {
-// 		lightboxEl.style.display = 'block';
-// 		lightboxEl.classList.add('showLightbox');
-// 		let rules = document.createElement('div');
-// 		rules.className = 'rules';
-// 		lightboxEl.appendChild();
-// 	}
-// };

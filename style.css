@@ -1,38 +1,58 @@
 body {
 	background-color: #ab0020;
+	box-sizing: border-box;
 }
 
 h1 {
 	color: #facb33;
 	font-family: 'Anton', sans-serif;
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+#score {
+	align-self: center;
+	color: #ffff;
+	font-family: 'Oswald', sans-serif;
+	text-align: center;
 }
 
 #options {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	padding: 1rem;
 }
 
 button {
 	margin: 1rem;
 	padding: 1rem;
 	border-radius: 100%;
+	border-style: none;
 }
 
 .weapons {
 	font-size: 2rem;
-	text-shadow: 1px 1px 4px black;
+	text-shadow: 1px 1px 3px black;
 }
 
 .topSection {
 	text-align: center;
 	min-height: 30vh;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
 }
 
 h2 {
 	display: block;
 	color: #ffff;
 	font-family: 'Oswald', sans-serif;
+}
+
+#playAgain {
+	width: 100%;
 }
 
 #playAgain p,
@@ -61,14 +81,17 @@ h2 {
 	color: #000000;
 }
 
-/* .lightbox {
-	position: fixed;
-	top: 80;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: #444444a2;
-	align-items: center;
-	z-index: 100;
+.hide {
 	display: none;
-} */
+}
+
+.rules {
+	background-color: white;
+	font-family: 'Oswald', sans-serif;
+	text-align: center;
+	width: min(60vh, 90%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
