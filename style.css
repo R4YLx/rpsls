@@ -1,6 +1,7 @@
 body {
 	background-color: #ab0020;
 	box-sizing: border-box;
+	max-height: 100vh;
 }
 
 h1 {
@@ -8,6 +9,7 @@ h1 {
 	font-family: 'Anton', sans-serif;
 	font-size: clamp(1.25rem, 6vw, 4rem);
 	text-align: center;
+	margin: 0;
 }
 
 /* Section where score is kept */
