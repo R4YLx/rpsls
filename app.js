@@ -5,10 +5,18 @@ const scoreboardEl = document.querySelector('#score');
 const playAgainEl = document.querySelector('#playAgain');
 const rulesBtnEl = document.querySelector('.rulesBtn');
 const rulesEl = document.querySelector('.rules');
+const userScoreEl = document.querySelector('.userScore');
+const compScoreEl = document.querySelector('.compScore');
 
 const options = ['🪨', '📰', '✂️', '🦎', '🖖'];
 
-let score = 0;
+let userScore = 0;
+let compScore = 0;
+
+const updateScore = () => {
+	userScoreEl.innerText = `You: ${userScore}`;
+	compScoreEl.innerText = `Computer: ${compScore}`;
+};
 
 // Game rules. Win, lose or draw
 const compareChoices = (userChoice, compChoice) => {
@@ -26,6 +34,8 @@ const compareChoices = (userChoice, compChoice) => {
 			resultOutput(
 				`<span class="win">You win!</span> You chose ${userChoice} against ${compChoice}.`
 			);
+			userScore++;
+			updateScore();
 			break;
 
 		case '📰✂️':
@@ -41,6 +51,8 @@ const compareChoices = (userChoice, compChoice) => {
 			resultOutput(
 				`<span class="lose">You lost!</span> You thought you could win with ${userChoice} against ${compChoice}? Try again.`
 			);
+			compScore++;
+			updateScore();
 			break;
 
 		case '🪨🪨':
