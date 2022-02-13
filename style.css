@@ -10,6 +10,7 @@ h1 {
 	text-align: center;
 }
 
+/* Section where score is kept */
 #score {
 	align-self: center;
 	color: #ffff;
@@ -20,6 +21,7 @@ h1 {
 	font-size: clamp(0.5rem, 4vw, 2rem);
 }
 
+/* Section for result per match */
 .topSection {
 	text-align: center;
 	min-height: 25vh;
@@ -36,6 +38,7 @@ h2 {
 	font-size: clamp(0.75rem, 5vw, 2.5rem);
 }
 
+/* Coloring on text for winning, losing and draw*/
 .win {
 	color: #28b431;
 }
@@ -48,12 +51,12 @@ h2 {
 	color: #000000;
 }
 
+/* Section for the different icons */
 #options {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	padding: 1rem;
-	width: 100%;
 }
 
 button {
@@ -63,11 +66,13 @@ button {
 	border-style: none;
 }
 
+/* Styling on the emojis */
 .weapons {
 	font-size: clamp(2rem, 5vw, 4rem);
 	text-shadow: 1px 1px 3px black;
 }
 
+/* Bottom button styling */
 .rulesBtn p,
 .reset p {
 	font-family: 'Oswald', sans-serif;
@@ -81,13 +86,14 @@ button {
 .rulesBtn,
 .reset {
 	text-align: center;
-	/* max-width: 20%; */
 }
 
+/* Class for toggling "Rules" */
 .hide {
 	display: none;
 }
 
+/* Rules text box */
 .rules {
 	background-color: white;
 	font-family: 'Oswald', sans-serif;
@@ -105,4 +111,11 @@ button {
 
 .rules p {
 	font-size: clamp(0.5rem, 4vw, 2rem);
+}
+
+/* Pointer for clickable objects */
+.weapons,
+.rulesBtn p,
+.reset p {
+	cursor: pointer;
 }
