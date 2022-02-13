@@ -1,6 +1,6 @@
 # Rock-Paper-Scissors-Lizard-Spock
 
-[Play it here](https://cat4u.netlify.app)
+[Play it here](https://rays-rpsls-game.netlify.app/)
 
 A game from the beloved TV show "The Big Bang Theory".<br>
 The classic game of rock, paper, scissors with a twist.
