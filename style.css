@@ -6,7 +6,7 @@ body {
 h1 {
 	color: #facb33;
 	font-family: 'Anton', sans-serif;
-	font-size: 1.5rem;
+	font-size: clamp(1.25rem, 6vw, 4rem);
 	text-align: center;
 }
 
@@ -16,7 +16,36 @@ h1 {
 	font-family: 'Oswald', sans-serif;
 	text-align: center;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-evenly;
+	font-size: clamp(0.5rem, 4vw, 2rem);
+}
+
+.topSection {
+	text-align: center;
+	min-height: 30vh;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+h2 {
+	display: block;
+	color: #ffff;
+	font-family: 'Oswald', sans-serif;
+	font-size: clamp(0.75rem, 5vw, 2.5rem);
+}
+
+.win {
+	color: #28b431;
+}
+
+.draw {
+	color: #e7b416;
+}
+
+.lose {
+	color: #000000;
 }
 
 #options {
@@ -34,28 +63,9 @@ button {
 }
 
 .weapons {
-	font-size: 2rem;
+	font-size: clamp(2rem, 5vw, 4rem);
 	text-shadow: 1px 1px 3px black;
 }
-
-.topSection {
-	text-align: center;
-	min-height: 30vh;
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	align-items: center;
-}
-
-h2 {
-	display: block;
-	color: #ffff;
-	font-family: 'Oswald', sans-serif;
-}
-/* 
-#playAgain {
-	width: 100%;
-} */
 
 .btns {
 	width: 100%;
@@ -71,23 +81,12 @@ h2 {
 	padding: 0.5rem;
 	background-color: white;
 	border-radius: 0.5rem;
+	font-size: clamp(0.5rem, 3vw, 2rem);
 }
 
 .rulesBtn {
 	display: flex;
 	justify-content: center;
-}
-
-.win {
-	color: #28b431;
-}
-
-.draw {
-	color: #e7b416;
-}
-
-.lose {
-	color: #000000;
 }
 
 .hide {
@@ -100,7 +99,15 @@ h2 {
 	text-align: center;
 	width: min(60vh, 90%);
 	position: absolute;
-	top: 50%;
+	top: 20%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -20%);
+}
+
+.rules h3 {
+	font-size: clamp(0.75rem, 4vw, 2.5rem);
+}
+
+.rules p {
+	font-size: clamp(0.5rem, 4vw, 2rem);
 }

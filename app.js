@@ -1,8 +1,6 @@
 // Variables
-const topSectionEl = document.querySelector('.topSection');
 const resultEl = document.querySelector('#result');
 const optionsEl = document.querySelector('#options');
-const scoreboardEl = document.querySelector('#score');
 const playAgainEl = document.querySelector('#playAgain');
 const resetBtnEl = document.querySelector('#reset');
 const rulesBtnEl = document.querySelector('.rulesBtn');
@@ -92,6 +90,7 @@ const showRules = () => {
 
 const resultOutput = result => {
 	const scoreboard = document.createElement('h2');
+	scoreboard.id = 'resultText';
 	scoreboard.innerHTML = result;
 	resultEl.appendChild(scoreboard);
 };
@@ -126,10 +125,10 @@ const playGame = () => {
 
 			playAgainEl.innerHTML = `<p>Play again</p>`;
 			resetBtnEl.innerHTML = `<p>Reset</p>`;
-			// const resetBtnEl = document.createElement('p');
-			// resetBtnEl.className = 'replay';
-			// resetBtnEl.innerHTML = `<p>Reset game</p>`;
-			// topSectionEl.appendChild();
+
+			// if (document.getElementById('resultText')) {
+			// 	document.getElementById('resultText').remove();
+			// }
 
 			playAgain();
 			resetGame();
