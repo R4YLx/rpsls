@@ -25,14 +25,9 @@ The classic game of rock, paper, scissors with a twist.
 
 ## Screenshot
 
-#### Mobile
 
-<img src="https://github.com/R4YLx/rpsls/blob/main/assets/screenshots/mobile%20scrn.png" width="50%">
-
-#### Tablet
-
-<img src="https://github.com/R4YLx/rpsls/blob/main/assets/screenshots/tablet-scrn.png" width="50%">
-
-#### Desktop
-
-<img src="https://github.com/R4YLx/rpsls/blob/main/assets/screenshots/desktop-scrn.png" width="50%">
+<div>
+<img src="https://github.com/R4YLx/rpsls/blob/main/assets/screenshots/mobile%20scrn.png" width="15%" style="display: inline;">
+<img src="https://github.com/R4YLx/rpsls/blob/main/assets/screenshots/tablet-scrn.png" width="30%" style="display: inline;">
+<img src="https://github.com/R4YLx/rpsls/blob/main/assets/screenshots/desktop-scrn.png" width="50%" style="display: inline;">
+</div>
