@@ -13,6 +13,7 @@ const options = ['🪨', '📰', '✂️', '🦎', '🖖'];
 let userScore = 0;
 let compScore = 0;
 
+// Upates score for user and computer
 const updateScore = () => {
 	userScoreEl.innerText = `You: ${userScore}`;
 	compScoreEl.innerText = `Computer: ${compScore}`;
